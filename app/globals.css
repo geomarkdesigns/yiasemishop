@@ -397,6 +397,25 @@ textarea.field { height: auto; min-height: 140px; padding: 14px 18px; border-rad
   .strip .dup { display: none; }
 }
 
+
+/* ---------- FAQ & CTA band (from the café site) ---------- */
+.faqs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s6); align-items: start; }
+.faq { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: var(--s3); padding: 18px 0; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary h3 { font-size: 1.15rem; }
+.faq summary::after { content: "+"; font-size: 1.3rem; color: var(--clay); transition: transform .2s var(--ease); flex: none; }
+.faq[open] summary::after { transform: rotate(45deg); }
+.faq p { color: var(--muted); padding-bottom: 18px; animation: rise .3s var(--ease); }
+.cta-band { background: var(--accent-fill); color: var(--on-accent); border-radius: var(--r); padding: clamp(32px, 6vw, 72px); display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--s5); align-items: center; }
+.cta-band h2 { color: inherit; }
+.cta-band p { opacity: .9; margin-top: var(--s2); }
+.cta-band .actions { justify-content: flex-end; margin-top: 0; }
+.cta-band .btn { border-color: var(--on-accent); color: var(--on-accent); }
+.cta-band .btn-solid { background: var(--on-accent); color: var(--accent-fill); }
+.cta-band .btn:hover { background: var(--on-accent); color: var(--accent-fill); }
+@media (max-width: 760px) { .faqs, .cta-band { grid-template-columns: 1fr; } .cta-band .actions { justify-content: flex-start; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .hero-grid, .pdp, .cart-page, .two-col, .newsletter { grid-template-columns: 1fr; gap: var(--s6); }

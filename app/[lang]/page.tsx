@@ -96,7 +96,24 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <figcaption>{t.home.quoteBy}</figcaption>
       </figure>
 
+      <section className="wrap section" aria-labelledby="faq-h">
+        <div className="sec-head"><div><p className="eyebrow reveal">{t.home.faqEyebrow}</p><h2 id="faq-h" className="reveal">{t.home.faqTitle}</h2></div></div>
+        <div className="faqs">
+          {t.home.faqs.map((f) => <details key={f.q} className="faq reveal"><summary><h3>{f.q}</h3></summary><p>{f.a}</p></details>)}
+        </div>
+      </section>
+
       {newsletter && <Newsletter lang={lang} />}
+
+      <section className="wrap section">
+        <div className="cta-band reveal">
+          <div><h2>{t.home.ctaTitle}</h2><p>{t.home.ctaLead}</p></div>
+          <div className="actions">
+            <Link className="btn btn-solid" href={`/${lang}/contact`}>{t.home.ctaPrimary} <Arrow className="arrow" /></Link>
+            <Link className="btn" href={`/${lang}/delivery`}>{t.home.ctaSecondary}</Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
